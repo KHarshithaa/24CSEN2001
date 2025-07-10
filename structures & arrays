@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+#define SUBJECTS 4
+#define STUDENTS 3
+
+struct Student {
+    char name[50];
+    int marks[SUBJECTS];  
+};
+
+int main() {
+    struct Student students [STUDENTS];
+    int i, j;
+
+    for (i = 0; i < STUDENTS; i++) {
+        printf("Enter name of student %d: ", i + 1);
+        scanf("%s", students[i].name);
+
+        printf("Enter %d marks for %s:\n", SUBJECTS, students[i].name);
+        for (j = 0; j < SUBJECTS; j++) {
+            printf("  Subject %d: ", j + 1);
+            scanf("%d", &students[i].marks[j]);
+        }
+    }
+    printf("\nStudent Data:\n");
+    for (i = 0; i < STUDENTS; i++) {
+        printf("Name: %s\n", students[i].name);
+        printf("Marks: ");
+        for (j = 0; j < SUBJECTS; j++) {
+            printf("%d ", students[i].marks[j]);
+  } 
+   printf("\n");
+} 
+return 0;
+}
